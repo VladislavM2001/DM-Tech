@@ -121,7 +121,9 @@ namespace DM_Tech
             }
             if (toolStripProgressBar1.Value == 100)
             {
+                toolStripProgressBar1.Minimum = 0;
                 toolStripProgressBar1.Value = 0;
+                
             }
         }
 
@@ -134,6 +136,11 @@ namespace DM_Tech
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripProgressBar1_Click(object sender, EventArgs e)
         {
 
         }

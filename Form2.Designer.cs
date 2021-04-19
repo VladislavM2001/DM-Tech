@@ -47,7 +47,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(80, 28);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 1;
@@ -57,7 +57,7 @@
             // But
             // 
             this.But.Location = new System.Drawing.Point(57, 60);
-            this.But.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.But.Margin = new System.Windows.Forms.Padding(4);
             this.But.Name = "But";
             this.But.Size = new System.Drawing.Size(100, 28);
             this.But.TabIndex = 2;
@@ -75,11 +75,11 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(245, 139);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DM-Tech Calc";
+            this.Text = "DM-Tech Calculator v5.1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);

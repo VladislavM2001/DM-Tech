@@ -18,6 +18,7 @@ namespace DM_Tech
         {
             InitializeComponent();
             label1.Text = Calculator.L1;
+            textBox1.Text = "";
         }
         private static string text;
         public static string TextP
@@ -55,6 +56,16 @@ namespace DM_Tech
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
+            textBox1.MaxLength = 3;
+            int maxval = int.Parse(textBox1.Text);
+            if (maxval > 250)
+            {
+                textBox1.Text = "250";
+            }
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "";
+            }
 
         }
 
