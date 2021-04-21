@@ -12,6 +12,7 @@ namespace DM_Tech
 {
     public partial class Calculator : Form
     {
+        bool F_save=false;
         Form2 f;
         Main m;
         double tok;
@@ -143,6 +144,9 @@ namespace DM_Tech
 
         private void Button3_Click(object sender, EventArgs e)
         {
+            textBox3.Text = "0";
+            f = new Form2();
+            f.ShowDialog();
             if (listBox1.Items != null)
             {
                 for (int n = listBox1.Items.Count - 1; n >= 0; --n)
@@ -154,9 +158,8 @@ namespace DM_Tech
                     }
                 }
             }
-            textBox3.Text = "0";         
-            f = new Form2();  
-            f.ShowDialog();
+                     
+            
             if (Form2.TextP == "0")
             {
                 textBox3.Text = "0";
@@ -206,6 +209,9 @@ namespace DM_Tech
 */
         private void Button5_Click(object sender, EventArgs e)
         {
+            textBox5.Text = "0";
+            f = new Form2();
+            f.ShowDialog();
             if (listBox1.Items != null)
             {
                 for (int n = listBox1.Items.Count - 1; n >= 0; --n)
@@ -217,9 +223,7 @@ namespace DM_Tech
                     }
                 }
             }
-            textBox5.Text = "0";
-            f = new Form2();
-            f.ShowDialog();
+           
             if (Form2.TextP == "0")
             {
                 textBox5.Text = "0";
@@ -264,6 +268,9 @@ namespace DM_Tech
 
         private void Button7_Click(object sender, EventArgs e)
         {
+            textBox7.Text = "0";
+            f = new Form2();
+            f.ShowDialog();
             if (listBox1.Items != null)
             {
                 for (int n = listBox1.Items.Count - 1; n >= 0; --n)
@@ -275,9 +282,7 @@ namespace DM_Tech
                     }
                 }
             }
-            textBox7.Text = "0";
-            f = new Form2();
-            f.ShowDialog();
+           
             if (Form2.TextP == "0")
             {
                 textBox7.Text = "0";
@@ -324,6 +329,9 @@ listBox1.Items.Add("D9000AI SR(520μA):" + Form2.TextP);
 
         private void Button9_Click(object sender, EventArgs e)
         {
+            textBox9.Text = "0";
+            f = new Form2();
+            f.ShowDialog();
             if (listBox1.Items != null)
             {
                 for (int n = listBox1.Items.Count - 1; n >= 0; --n)
@@ -335,9 +343,7 @@ listBox1.Items.Add("D9000AI SR(520μA):" + Form2.TextP);
                     }
                 }
             }
-            textBox9.Text = "0";
-            f = new Form2();
-            f.ShowDialog();
+            
             if (Form2.TextP == "0")
             {
                 textBox9.Text = "0";
@@ -389,6 +395,9 @@ listBox1.Items.Add("D9000AI MSR(530μA):" + Form2.TextP);
 
         private void Button11_Click(object sender, EventArgs e)
         {
+            textBox11.Text = "0";
+            f = new Form2();
+            f.ShowDialog();
             if (listBox1.Items != null)
             {
                 for (int n = listBox1.Items.Count - 1; n >= 0; --n)
@@ -400,9 +409,7 @@ listBox1.Items.Add("D9000AI MSR(530μA):" + Form2.TextP);
                     }
                 }
             }
-            textBox11.Text = "0";
-            f = new Form2();
-            f.ShowDialog();
+            
             if (Form2.TextP == "0")
             {
                 textBox11.Text = "0";
@@ -421,6 +428,9 @@ listBox1.Items.Add("D9000AI MSR(530μA):" + Form2.TextP);
 
         private void Button12_Click(object sender, EventArgs e)
         {
+            textBox12.Text = "0";
+            f = new Form2();
+            f.ShowDialog();
             if (listBox1.Items != null)
             {
                 for (int n = listBox1.Items.Count - 1; n >= 0; --n)
@@ -432,9 +442,7 @@ listBox1.Items.Add("D9000AI MSR(530μA):" + Form2.TextP);
                     }
                 }
             }
-            textBox12.Text = "0";
-            f = new Form2();
-            f.ShowDialog();
+           
             if (Form2.TextP == "0")
             {
                 textBox12.Text = "0";
@@ -453,6 +461,9 @@ listBox1.Items.Add("D9000AI MSR(530μA):" + Form2.TextP);
 
         private void Button13_Click(object sender, EventArgs e)
         {
+            textBox13.Text = "0";
+            f = new Form2();
+            f.ShowDialog();
             if (listBox1.Items != null)
             {
                 for (int n = listBox1.Items.Count - 1; n >= 0; --n)
@@ -464,9 +475,7 @@ listBox1.Items.Add("D9000AI MSR(530μA):" + Form2.TextP);
                     }
                 }
             }
-            textBox13.Text = "0";
-            f = new Form2();
-            f.ShowDialog();
+            
             if (Form2.TextP == "0")
             {
                 textBox13.Text = "0";
@@ -484,6 +493,9 @@ listBox1.Items.Add("M9000A IN/OUT(500μA):" + Form2.TextP);
 
         private void Button14_Click(object sender, EventArgs e)
         {
+            textBox14.Text = "0";
+            f = new Form2();
+            f.ShowDialog();
             if (listBox1.Items != null)
             {
                 for (int n = listBox1.Items.Count - 1; n >= 0; --n)
@@ -495,9 +507,7 @@ listBox1.Items.Add("M9000A IN/OUT(500μA):" + Form2.TextP);
                     }
                 }
             }
-            textBox14.Text = "0";
-            f = new Form2();
-            f.ShowDialog();
+            
             if (Form2.TextP == "0")
             {
                 textBox14.Text = "0";
@@ -764,27 +774,38 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
-            var saveFile = new SaveFileDialog();
-            saveFile.Filter = "Text(*.txt)|*.txt";
-            if (saveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-
+            if (F_save == true)
             {
-                using (var sw = new StreamWriter(saveFile.FileName, true))
-                {
-                    sw.WriteLine("Devices:");
-                    foreach (var item in listBox1.Items)
-                    {
-                        sw.Write(item.ToString() + Environment.NewLine);
-                    }
-                    sw.WriteLine();
-                    sw.WriteLine();
-                    sw.WriteLine();
-                    sw.WriteLine("Number:" + textBox1.Text);
-                    sw.WriteLine("Current(mA):" + textBox2.Text);
-                    sw.WriteLine("Lenght:" + textBox15.Text);
-                    sw.WriteLine("Cross section:" + textBox17.Text);
-                }
                 MessageBox.Show("File is saved!");
+            }
+            else
+            {
+                var saveFile = new SaveFileDialog();
+                saveFile.Filter = "Text(*.txt)|*.txt";
+                saveFile.FileName = "DM-Tech calc file1.txt";
+                if (saveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+
+                {
+                    using (var sw = new StreamWriter(saveFile.FileName, true))
+                    {
+                        sw.WriteLine("Devices:");
+                        foreach (var item in listBox1.Items)
+                        {
+                            sw.Write(item.ToString() + Environment.NewLine);
+                        }
+                        sw.WriteLine();
+                        sw.WriteLine();
+                        sw.WriteLine();
+                        sw.WriteLine("Number:" + textBox1.Text);
+                        sw.WriteLine("Current(mA):" + textBox2.Text);
+                        sw.WriteLine("Lenght:" + textBox15.Text);
+                        sw.WriteLine("Cross section:" + textBox17.Text);
+                    }
+                    MessageBox.Show("File is saved!");
+                    F_save = true;
+
+                }
+
             }
         }
 
@@ -979,46 +1000,54 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
 
         private void Calculator_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (listBox1.Items.Count == 0)
+            if (F_save == true)
             {
-                Application.Exit();
+                
             }
-            else if (listBox1.Items.Count != 0)
+            else
             {
-                DialogResult dial = MessageBox.Show("Do you want to save?", "Exit", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-
-                if (dial == DialogResult.Yes)
+                if (listBox1.Items.Count == 0)
                 {
-                    var saveFile = new SaveFileDialog();
-                    saveFile.Filter = "Word(*.doc)|*.doc|Text(*.txt)|*.txt";
-                    if (saveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    Application.Exit();
+                }
+                else if (listBox1.Items.Count != 0)
+                {
+                    DialogResult dial = MessageBox.Show("Do you want to save?", "Exit", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
+                    if (dial == DialogResult.Yes)
                     {
-                        using (var sw = new StreamWriter(saveFile.FileName, true))
-                        {
-                            sw.WriteLine("Devices:");
-                            foreach (var item in listBox1.Items)
-                            {
-                                sw.Write(item.ToString() + Environment.NewLine);
-                            }
-                            sw.WriteLine();
-                            sw.WriteLine();
-                            sw.WriteLine();
-                            sw.WriteLine("Number:" + textBox1.Text);
-                            sw.WriteLine("Current(mA):" + textBox2.Text);
-                            sw.WriteLine("Lenght:" + textBox15.Text);
-                            sw.WriteLine("Cross section:" + textBox17.Text);
-                        }
-                        MessageBox.Show("File is saved!");
+                        var saveFile = new SaveFileDialog();
+                        saveFile.Filter = "Word(*.doc)|*.doc|Text(*.txt)|*.txt";
+                        if (saveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
 
+                        {
+                            using (var sw = new StreamWriter(saveFile.FileName, true))
+                            {
+                                sw.WriteLine("Devices:");
+                                foreach (var item in listBox1.Items)
+                                {
+                                    sw.Write(item.ToString() + Environment.NewLine);
+                                }
+                                sw.WriteLine();
+                                sw.WriteLine();
+                                sw.WriteLine();
+                                sw.WriteLine("Number:" + textBox1.Text);
+                                sw.WriteLine("Current(mA):" + textBox2.Text);
+                                sw.WriteLine("Lenght:" + textBox15.Text);
+                                sw.WriteLine("Cross section:" + textBox17.Text);
+                            }
+                            MessageBox.Show("File is saved!");
+
+                        }
+                        this.Close();
                     }
-                    this.Close();
-                }
-                else if(dial == DialogResult.Cancel)
-                {
-                    e.Cancel = true;
+                    else if (dial == DialogResult.Cancel)
+                    {
+                        e.Cancel = true;
+                    }
                 }
             }
+            
         }
 
             private void toolStripButton2_Click(object sender, EventArgs e)
@@ -1033,6 +1062,8 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+             
+            /*
             double num1 = double.Parse(textBox3.Text);
             double num2 = double.Parse(textBox4.Text);
             double num3 = double.Parse(textBox5.Text);
@@ -1053,7 +1084,7 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
             else
             {
                 textBox1.Text = sum.ToString();
-            }
+            }*/
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -1065,13 +1096,16 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
         private void textBox16_TextChanged(object sender, EventArgs e)
         {
             textBox16.MaxLength = 4;
-            int maxval = int.Parse(textBox16.Text);
-            if (maxval > 2000)
+            int value;
+            if (int.TryParse(textBox16.Text, out value))
             {
-                textBox16.Text = "2000";
+                if (value > 2000)
+                    textBox16.Text = "2000";
+                else if (value < 0)
+                    textBox16.Text = "0";
             }
-            
-            
+
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

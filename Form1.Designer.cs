@@ -747,7 +747,7 @@
             this.MaximizeBox = false;
             this.Name = "Calculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "DM-Tech Calculator v5.1";
+            this.Text = "DM-Tech Calculator v5.2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Calculator_FormClosing);
             this.Load += new System.EventHandler(this.Calculator_Load);
             this.panel1.ResumeLayout(false);

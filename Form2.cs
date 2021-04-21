@@ -29,24 +29,11 @@ namespace DM_Tech
        
         
         private void Button1_Click(object sender, EventArgs e)
-        {
-            List<string> a = new List<string>();
-            a.Add(textBox1.Text);
-            if (textBox1.Text == "")
-            {
-                MessageBox.Show("Input number!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-            else
-            {
+        {       
                 TextP = textBox1.Text;
                 Calculator c = new Calculator();
                 this.Hide();
-                this.Close();
-            }
-            
-           
-            
-            
+                this.Close();   
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -56,15 +43,25 @@ namespace DM_Tech
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
+           
+            int value;
+            if (int.TryParse(textBox1.Text, out value))
+            {
+                if (value > 250)
+                    textBox1.Text = "250";
+                else if (value < 0)
+                    textBox1.Text = "0";
+            }
             textBox1.MaxLength = 3;
-            int maxval = int.Parse(textBox1.Text);
-            if (maxval > 250)
+           /* int max_Value = int.Parse(textBox1.Text);
+            if (max_Value > 250)
             {
                 textBox1.Text = "250";
-            }
-            if (textBox1.Text == "")
+            }*/
+
+            if (textBox1.Text == null)
             {
-                textBox1.Text = "";
+                textBox1.Text =string.Empty;
             }
 
         }
@@ -89,5 +86,7 @@ namespace DM_Tech
                 TextP = textBox1.Text;
             }
         }
+
+       
     }
 }
