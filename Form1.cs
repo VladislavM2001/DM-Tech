@@ -8,14 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.CompilerServices;
+
 namespace DM_Tech
 {
     public partial class Calculator : Form
     {
         bool F_save=false;
         Form2 f;
+        Form3 update;
         Main m;
         double tok;
+        
+       
         private static string open1;
         public static string Open1
         {
@@ -39,6 +44,7 @@ namespace DM_Tech
         public Calculator()
         {
             InitializeComponent();
+            toolStripButton1.Enabled = false;
             toolTip1.SetToolTip(button3, "Devices number between 0-250!");
             
             toolTip1.SetToolTip(button5, "Devices number between 0-250!");
@@ -57,7 +63,7 @@ namespace DM_Tech
             textBox17.Enabled = false;
             timer2.Start();
             button2.Text = "Devices:";
-            button1.Text = "Calculate";
+            //button1.Text = "Calculate";
 
             label1.Text = "Number of devices";
             label2.Text = "Current mA";
@@ -523,7 +529,7 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
         }
 
 
-        private void Button1_Click(object sender, EventArgs e)
+        /*private void Button1_Click(object sender, EventArgs e)
         {
             if (listBox1.Items.Count == 0)
             {
@@ -586,7 +592,7 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
             }
            
 
-        }
+        }*/
 
         private void Button16_Click(object sender, EventArgs e)
         {
@@ -762,7 +768,62 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
+            if (listBox1.Items.Count == 0)
+            {
+                button16.Enabled = false;
+                button17.Enabled = false;
+                textBox16.Enabled = false;
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                radioButton3.Enabled = false;
+                radioButton4.Enabled = false;
+                radioButton5.Enabled = false;
+                radioButton6.Enabled = false;
+            }
+            else
+            {
+                button16.Enabled = true;
+                button17.Enabled = true;
+                textBox16.Enabled = true;
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+                radioButton3.Enabled = true;
+                radioButton4.Enabled = true;
+                radioButton5.Enabled = true;
+                radioButton6.Enabled = true;
+            }
+            double num1 = double.Parse(textBox3.Text);
+            double num2 = double.Parse(textBox4.Text);
+            double num3 = double.Parse(textBox5.Text);
+            double num4 = double.Parse(textBox6.Text);
+            double num5 = double.Parse(textBox7.Text);
+            double num6 = double.Parse(textBox8.Text);
+            double num7 = double.Parse(textBox9.Text);
+            double num8 = double.Parse(textBox10.Text);
+            double num9 = double.Parse(textBox11.Text);
+            double num10 = double.Parse(textBox12.Text);
+            double num11 = double.Parse(textBox13.Text);
+            double num12 = double.Parse(textBox14.Text);
+            double sum = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10 + num11 + num12;
+            if (sum > 250)
+            {
+                MessageBox.Show("Devices must be less than 250!");
+            }
+            else
+            {
+                textBox1.Text = sum.ToString();
+            }
+            tok = num1 * 0.49 + num2 * 0.51 + num3 * 0.49 + num4 * 0.51 + num5 * 0.50 + num6 * 0.52 + num7 * 0.51 + num8 * 0.53 + num9 * 0.45 + num10 * 30 + num11 * 0.50 + num12 * 10;
+            if (tok > 500)
+            {
+                MessageBox.Show("Current must be less 500mA!");
 
+            }
+            else
+            {
+
+                textBox2.Text = tok.ToString() + "mA";
+            }
         }
 
         private void Calculator_Load(object sender, EventArgs e)
@@ -903,7 +964,7 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
         {
 
             button2.Text = "Devices:";
-            button1.Text = "Calculate";
+            //button1.Text = "Calculate";
           
            label1.Text = "Number of devices";
             label2.Text = "Current mA";
@@ -927,7 +988,7 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
         private void българскиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             button2.Text = "Устройство:";
-            button1.Text = "Изчисли";
+            //button1.Text = "Изчисли";
             label1.Text = "Брой устройства";
             label2.Text = "Ток mA";
             button16.Text = "Изчисляване на дължината";
@@ -1060,10 +1121,8 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
             
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBo1_TextChanged(object sender, EventArgs e)
         {
-             
-            /*
             double num1 = double.Parse(textBox3.Text);
             double num2 = double.Parse(textBox4.Text);
             double num3 = double.Parse(textBox5.Text);
@@ -1077,14 +1136,8 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
             double num11 = double.Parse(textBox13.Text);
             double num12 = double.Parse(textBox14.Text);
             double sum = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10 + num11 + num12;
-            if (sum > 250)
-            {
-                MessageBox.Show("Devices must be less than 250!");
-            }
-            else
-            {
-                textBox1.Text = sum.ToString();
-            }*/
+            textBox1.Text = sum.ToString();
+
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -1148,7 +1201,434 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
 
         }
 
-        
-    }
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            update = new Form3();
+            update.Show();
+        }
 
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            if (listBox1.Items.Count == 0)
+            {
+                button16.Enabled = false;
+                button17.Enabled = false;
+                textBox16.Enabled = false;
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                radioButton3.Enabled = false;
+                radioButton4.Enabled = false;
+                radioButton5.Enabled = false;
+                radioButton6.Enabled = false;
+            }
+            else
+            {
+                button16.Enabled = true;
+                button17.Enabled = true;
+                textBox16.Enabled = true;
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+                radioButton3.Enabled = true;
+                radioButton4.Enabled = true;
+                radioButton5.Enabled = true;
+                radioButton6.Enabled = true;
+            }
+            double num1 = double.Parse(textBox3.Text);
+            double num2 = double.Parse(textBox4.Text);
+            double num3 = double.Parse(textBox5.Text);
+            double num4 = double.Parse(textBox6.Text);
+            double num5 = double.Parse(textBox7.Text);
+            double num6 = double.Parse(textBox8.Text);
+            double num7 = double.Parse(textBox9.Text);
+            double num8 = double.Parse(textBox10.Text);
+            double num9 = double.Parse(textBox11.Text);
+            double num10 = double.Parse(textBox12.Text);
+            double num11 = double.Parse(textBox13.Text);
+            double num12 = double.Parse(textBox14.Text);
+            double sum = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10 + num11 + num12;
+            if (sum > 250)
+            {
+                MessageBox.Show("Devices must be less than 250!");
+            }
+            else
+            {
+                textBox1.Text = sum.ToString();
+            }
+            tok = num1 * 0.49 + num2 * 0.51 + num3 * 0.49 + num4 * 0.51 + num5 * 0.50 + num6 * 0.52 + num7 * 0.51 + num8 * 0.53 + num9 * 0.45 + num10 * 30 + num11 * 0.50 + num12 * 10;
+            if (tok > 500)
+            {
+                MessageBox.Show("Current must be less 500mA!");
+
+            }
+            else
+            {
+
+                textBox2.Text = tok.ToString() + "mA";
+            }
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            if (listBox1.Items.Count == 0)
+            {
+                button16.Enabled = false;
+                button17.Enabled = false;
+                textBox16.Enabled = false;
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                radioButton3.Enabled = false;
+                radioButton4.Enabled = false;
+                radioButton5.Enabled = false;
+                radioButton6.Enabled = false;
+            }
+            else
+            {
+                button16.Enabled = true;
+                button17.Enabled = true;
+                textBox16.Enabled = true;
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+                radioButton3.Enabled = true;
+                radioButton4.Enabled = true;
+                radioButton5.Enabled = true;
+                radioButton6.Enabled = true;
+            }
+            double num1 = double.Parse(textBox3.Text);
+            double num2 = double.Parse(textBox4.Text);
+            double num3 = double.Parse(textBox5.Text);
+            double num4 = double.Parse(textBox6.Text);
+            double num5 = double.Parse(textBox7.Text);
+            double num6 = double.Parse(textBox8.Text);
+            double num7 = double.Parse(textBox9.Text);
+            double num8 = double.Parse(textBox10.Text);
+            double num9 = double.Parse(textBox11.Text);
+            double num10 = double.Parse(textBox12.Text);
+            double num11 = double.Parse(textBox13.Text);
+            double num12 = double.Parse(textBox14.Text);
+            double sum = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10 + num11 + num12;
+            if (sum > 250)
+            {
+                MessageBox.Show("Devices must be less than 250!");
+            }
+            else
+            {
+                textBox1.Text = sum.ToString();
+            }
+            tok = num1 * 0.49 + num2 * 0.51 + num3 * 0.49 + num4 * 0.51 + num5 * 0.50 + num6 * 0.52 + num7 * 0.51 + num8 * 0.53 + num9 * 0.45 + num10 * 30 + num11 * 0.50 + num12 * 10;
+            if (tok > 500)
+            {
+                MessageBox.Show("Current must be less 500mA!");
+
+            }
+            else
+            {
+
+                textBox2.Text = tok.ToString() + "mA";
+            }
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+            if (listBox1.Items.Count == 0)
+            {
+                button16.Enabled = false;
+                button17.Enabled = false;
+                textBox16.Enabled = false;
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                radioButton3.Enabled = false;
+                radioButton4.Enabled = false;
+                radioButton5.Enabled = false;
+                radioButton6.Enabled = false;
+            }
+            else
+            {
+                button16.Enabled = true;
+                button17.Enabled = true;
+                textBox16.Enabled = true;
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+                radioButton3.Enabled = true;
+                radioButton4.Enabled = true;
+                radioButton5.Enabled = true;
+                radioButton6.Enabled = true;
+            }
+            double num1 = double.Parse(textBox3.Text);
+            double num2 = double.Parse(textBox4.Text);
+            double num3 = double.Parse(textBox5.Text);
+            double num4 = double.Parse(textBox6.Text);
+            double num5 = double.Parse(textBox7.Text);
+            double num6 = double.Parse(textBox8.Text);
+            double num7 = double.Parse(textBox9.Text);
+            double num8 = double.Parse(textBox10.Text);
+            double num9 = double.Parse(textBox11.Text);
+            double num10 = double.Parse(textBox12.Text);
+            double num11 = double.Parse(textBox13.Text);
+            double num12 = double.Parse(textBox14.Text);
+            double sum = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10 + num11 + num12;
+            if (sum > 250)
+            {
+                MessageBox.Show("Devices must be less than 250!");
+            }
+            else
+            {
+                textBox1.Text = sum.ToString();
+            }
+            tok = num1 * 0.49 + num2 * 0.51 + num3 * 0.49 + num4 * 0.51 + num5 * 0.50 + num6 * 0.52 + num7 * 0.51 + num8 * 0.53 + num9 * 0.45 + num10 * 30 + num11 * 0.50 + num12 * 10;
+            if (tok > 500)
+            {
+                MessageBox.Show("Current must be less 500mA!");
+
+            }
+            else
+            {
+
+                textBox2.Text = tok.ToString() + "mA";
+            }
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+            if (listBox1.Items.Count == 0)
+            {
+                button16.Enabled = false;
+                button17.Enabled = false;
+                textBox16.Enabled = false;
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                radioButton3.Enabled = false;
+                radioButton4.Enabled = false;
+                radioButton5.Enabled = false;
+                radioButton6.Enabled = false;
+            }
+            else
+            {
+                button16.Enabled = true;
+                button17.Enabled = true;
+                textBox16.Enabled = true;
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+                radioButton3.Enabled = true;
+                radioButton4.Enabled = true;
+                radioButton5.Enabled = true;
+                radioButton6.Enabled = true;
+            }
+            double num1 = double.Parse(textBox3.Text);
+            double num2 = double.Parse(textBox4.Text);
+            double num3 = double.Parse(textBox5.Text);
+            double num4 = double.Parse(textBox6.Text);
+            double num5 = double.Parse(textBox7.Text);
+            double num6 = double.Parse(textBox8.Text);
+            double num7 = double.Parse(textBox9.Text);
+            double num8 = double.Parse(textBox10.Text);
+            double num9 = double.Parse(textBox11.Text);
+            double num10 = double.Parse(textBox12.Text);
+            double num11 = double.Parse(textBox13.Text);
+            double num12 = double.Parse(textBox14.Text);
+            double sum = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10 + num11 + num12;
+            if (sum > 250)
+            {
+                MessageBox.Show("Devices must be less than 250!");
+            }
+            else
+            {
+                textBox1.Text = sum.ToString();
+            }
+            tok = num1 * 0.49 + num2 * 0.51 + num3 * 0.49 + num4 * 0.51 + num5 * 0.50 + num6 * 0.52 + num7 * 0.51 + num8 * 0.53 + num9 * 0.45 + num10 * 30 + num11 * 0.50 + num12 * 10;
+            if (tok > 500)
+            {
+                MessageBox.Show("Current must be less 500mA!");
+
+            }
+            else
+            {
+
+                textBox2.Text = tok.ToString() + "mA";
+            }
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+            if (listBox1.Items.Count == 0)
+            {
+                button16.Enabled = false;
+                button17.Enabled = false;
+                textBox16.Enabled = false;
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                radioButton3.Enabled = false;
+                radioButton4.Enabled = false;
+                radioButton5.Enabled = false;
+                radioButton6.Enabled = false;
+            }
+            else
+            {
+                button16.Enabled = true;
+                button17.Enabled = true;
+                textBox16.Enabled = true;
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+                radioButton3.Enabled = true;
+                radioButton4.Enabled = true;
+                radioButton5.Enabled = true;
+                radioButton6.Enabled = true;
+            }
+            double num1 = double.Parse(textBox3.Text);
+            double num2 = double.Parse(textBox4.Text);
+            double num3 = double.Parse(textBox5.Text);
+            double num4 = double.Parse(textBox6.Text);
+            double num5 = double.Parse(textBox7.Text);
+            double num6 = double.Parse(textBox8.Text);
+            double num7 = double.Parse(textBox9.Text);
+            double num8 = double.Parse(textBox10.Text);
+            double num9 = double.Parse(textBox11.Text);
+            double num10 = double.Parse(textBox12.Text);
+            double num11 = double.Parse(textBox13.Text);
+            double num12 = double.Parse(textBox14.Text);
+            double sum = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10 + num11 + num12;
+            if (sum > 250)
+            {
+                MessageBox.Show("Devices must be less than 250!");
+            }
+            else
+            {
+                textBox1.Text = sum.ToString();
+            }
+            tok = num1 * 0.49 + num2 * 0.51 + num3 * 0.49 + num4 * 0.51 + num5 * 0.50 + num6 * 0.52 + num7 * 0.51 + num8 * 0.53 + num9 * 0.45 + num10 * 30 + num11 * 0.50 + num12 * 10;
+            if (tok > 500)
+            {
+                MessageBox.Show("Current must be less 500mA!");
+
+            }
+            else
+            {
+
+                textBox2.Text = tok.ToString() + "mA";
+            }
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+            if (listBox1.Items.Count == 0)
+            {
+                button16.Enabled = false;
+                button17.Enabled = false;
+                textBox16.Enabled = false;
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                radioButton3.Enabled = false;
+                radioButton4.Enabled = false;
+                radioButton5.Enabled = false;
+                radioButton6.Enabled = false;
+            }
+            else
+            {
+                button16.Enabled = true;
+                button17.Enabled = true;
+                textBox16.Enabled = true;
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+                radioButton3.Enabled = true;
+                radioButton4.Enabled = true;
+                radioButton5.Enabled = true;
+                radioButton6.Enabled = true;
+            }
+            double num1 = double.Parse(textBox3.Text);
+            double num2 = double.Parse(textBox4.Text);
+            double num3 = double.Parse(textBox5.Text);
+            double num4 = double.Parse(textBox6.Text);
+            double num5 = double.Parse(textBox7.Text);
+            double num6 = double.Parse(textBox8.Text);
+            double num7 = double.Parse(textBox9.Text);
+            double num8 = double.Parse(textBox10.Text);
+            double num9 = double.Parse(textBox11.Text);
+            double num10 = double.Parse(textBox12.Text);
+            double num11 = double.Parse(textBox13.Text);
+            double num12 = double.Parse(textBox14.Text);
+            double sum = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10 + num11 + num12;
+            if (sum > 250)
+            {
+                MessageBox.Show("Devices must be less than 250!");
+            }
+            else
+            {
+                textBox1.Text = sum.ToString();
+            }
+            tok = num1 * 0.49 + num2 * 0.51 + num3 * 0.49 + num4 * 0.51 + num5 * 0.50 + num6 * 0.52 + num7 * 0.51 + num8 * 0.53 + num9 * 0.45 + num10 * 30 + num11 * 0.50 + num12 * 10;
+            if (tok > 500)
+            {
+                MessageBox.Show("Current must be less 500mA!");
+
+            }
+            else
+            {
+
+                textBox2.Text = tok.ToString() + "mA";
+            }
+        }
+
+        private void textBox14_TextChanged(object sender, EventArgs e)
+        {
+            if (listBox1.Items.Count == 0)
+            {
+                button16.Enabled = false;
+                button17.Enabled = false;
+                textBox16.Enabled = false;
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                radioButton3.Enabled = false;
+                radioButton4.Enabled = false;
+                radioButton5.Enabled = false;
+                radioButton6.Enabled = false;
+            }
+            else
+            {
+                button16.Enabled = true;
+                button17.Enabled = true;
+                textBox16.Enabled = true;
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+                radioButton3.Enabled = true;
+                radioButton4.Enabled = true;
+                radioButton5.Enabled = true;
+                radioButton6.Enabled = true;
+            }
+            double num1 = double.Parse(textBox3.Text);
+            double num2 = double.Parse(textBox4.Text);
+            double num3 = double.Parse(textBox5.Text);
+            double num4 = double.Parse(textBox6.Text);
+            double num5 = double.Parse(textBox7.Text);
+            double num6 = double.Parse(textBox8.Text);
+            double num7 = double.Parse(textBox9.Text);
+            double num8 = double.Parse(textBox10.Text);
+            double num9 = double.Parse(textBox11.Text);
+            double num10 = double.Parse(textBox12.Text);
+            double num11 = double.Parse(textBox13.Text);
+            double num12 = double.Parse(textBox14.Text);
+            double sum = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10 + num11 + num12;
+            if (sum > 250)
+            {
+                MessageBox.Show("Devices must be less than 250!");
+               
+            }
+            else
+            {
+                textBox1.Text = sum.ToString();
+            }
+            tok = num1 * 0.49 + num2 * 0.51 + num3 * 0.49 + num4 * 0.51 + num5 * 0.50 + num6 * 0.52 + num7 * 0.51 + num8 * 0.53 + num9 * 0.45 + num10 * 30 + num11 * 0.50 + num12 * 10;
+
+            if (tok > 500)
+            {
+                MessageBox.Show("Current must be less 500mA!");
+
+            }
+            else
+            {
+
+                textBox2.Text = tok.ToString() + "mA";
+            }
+        }
+    }
 }
+
+

@@ -129,10 +129,13 @@ namespace DM_Tech
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            toolStripProgressBar1.Value = 0;
+            timer1.Start();
+            timer1.Interval = 1000;
+
             listBox1.Items.Clear();
-            toolStripProgressBar1.Value = 100;
-           
+
+            timer1.Stop();
+ 
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -142,7 +145,23 @@ namespace DM_Tech
 
         private void toolStripProgressBar1_Click(object sender, EventArgs e)
         {
+            
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            toolStripProgressBar1.Minimum = 0;
+            toolStripProgressBar1.Maximum = 100;
+            if (toolStripProgressBar1.Value < toolStripProgressBar1.Maximum)
+            {
+                toolStripProgressBar1.Value = toolStripProgressBar1.Value + 10;
+            }
+            if (toolStripProgressBar1.Value ==90)
+            {
+                MessageBox.Show("Ready", "Info");
+            }
+                   
         }
     }
 }
