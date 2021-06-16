@@ -14,13 +14,13 @@ namespace DM_Tech
 {
     public partial class Calculator : Form
     {
-        bool F_save=false;
+        bool F_save = false;
         Form2 f;
         Form3 update;
         Main m;
         double tok;
-        
-       
+
+
         private static string open1;
         public static string Open1
         {
@@ -46,13 +46,13 @@ namespace DM_Tech
             InitializeComponent();
             toolStripButton1.Enabled = false;
             toolTip1.SetToolTip(button3, "Devices number between 0-250!");
-            
+
             toolTip1.SetToolTip(button5, "Devices number between 0-250!");
-            
+
             toolTip1.SetToolTip(button7, "Devices number between 0-250!");
-            
+
             toolTip1.SetToolTip(button9, "Devices number between 0-250!");
-            
+
             toolTip1.SetToolTip(button11, "Devices number between 0-250!");
             toolTip1.SetToolTip(button12, "Devices number between 0-250!");
             toolTip1.SetToolTip(button13, "Devices number between 0-250!");
@@ -78,7 +78,7 @@ namespace DM_Tech
             printToolStripButton.Text = "Print";
             toolStripDropDownButton1.Text = "Language";
             toolStripButton2.Text = "About";
-            
+
             Open1 = "Open";
             Print1 = "Print";
             Remove1 = "Remove";
@@ -91,13 +91,13 @@ namespace DM_Tech
             radioButton4.Enabled = false;
             radioButton5.Enabled = false;
             radioButton6.Enabled = false;
-           
-          
+
+
         }
 
 
 
-    
+
         private static string sech;
         public static string Sech
         {
@@ -164,8 +164,8 @@ namespace DM_Tech
                     }
                 }
             }
-                     
-            
+
+
             if (Form2.TextP == "0")
             {
                 textBox3.Text = "0";
@@ -175,12 +175,12 @@ namespace DM_Tech
                 listBox1.Items.Add("D9000A T A1R(490μA):" + Form2.TextP);
                 textBox3.AppendText(Form2.TextP);
             }
-            
+
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            panel1.Height = 284;
+            panel1.Height = 235;
             timer1.Stop();
         }
 
@@ -229,7 +229,7 @@ namespace DM_Tech
                     }
                 }
             }
-           
+
             if (Form2.TextP == "0")
             {
                 textBox5.Text = "0";
@@ -239,38 +239,38 @@ namespace DM_Tech
                 listBox1.Items.Add("D9000A T A1S(490μA):" + Form2.TextP);
                 textBox5.AppendText(Form2.TextP);
             }
-            
-            
+
+
         }
 
-      /*  private void Button6_Click(object sender, EventArgs e)
-        {
-            if (listBox1.Items != null)
-            {
-                for (int n = listBox1.Items.Count - 1; n >= 0; --n)
-                {
-                    string removelistitem = "D9000AI A1S(490μA):";
-                    if (listBox1.Items[n].ToString().Contains(removelistitem))
-                    {
-                        listBox1.Items.RemoveAt(n);
-                    }
-                }
-            }
-            textBox6.Text = "0";
-            f = new Form2();
-            f.ShowDialog();
-            if (Form2.TextP == "0")
-            {
-                textBox6.Text = "0";
-            }
-            else
-            {
-             listBox1.Items.Add("D9000AI A1S(510μA):" + Form2.TextP);
-            textBox6.AppendText(Form2.TextP);
-            }
-            
-            
-        }*/
+        /*  private void Button6_Click(object sender, EventArgs e)
+          {
+              if (listBox1.Items != null)
+              {
+                  for (int n = listBox1.Items.Count - 1; n >= 0; --n)
+                  {
+                      string removelistitem = "D9000AI A1S(490μA):";
+                      if (listBox1.Items[n].ToString().Contains(removelistitem))
+                      {
+                          listBox1.Items.RemoveAt(n);
+                      }
+                  }
+              }
+              textBox6.Text = "0";
+              f = new Form2();
+              f.ShowDialog();
+              if (Form2.TextP == "0")
+              {
+                  textBox6.Text = "0";
+              }
+              else
+              {
+               listBox1.Items.Add("D9000AI A1S(510μA):" + Form2.TextP);
+              textBox6.AppendText(Form2.TextP);
+              }
+
+
+          }*/
 
         private void Button7_Click(object sender, EventArgs e)
         {
@@ -288,18 +288,18 @@ namespace DM_Tech
                     }
                 }
             }
-           
+
             if (Form2.TextP == "0")
             {
                 textBox7.Text = "0";
             }
             else
             {
-            listBox1.Items.Add("D9000A SR(500μA):" + Form2.TextP);
-            textBox7.AppendText(Form2.TextP);
+                listBox1.Items.Add("D9000A SR(500μA):" + Form2.TextP);
+                textBox7.AppendText(Form2.TextP);
             }
-            
-            
+
+
         }
 
         /*private void Button8_Click(object sender, EventArgs e)
@@ -349,55 +349,55 @@ listBox1.Items.Add("D9000AI SR(520μA):" + Form2.TextP);
                     }
                 }
             }
-            
+
             if (Form2.TextP == "0")
             {
                 textBox9.Text = "0";
             }
             else
             {
-listBox1.Items.Add("D9000A MSR(510μA):" + Form2.TextP);
-            textBox9.AppendText(Form2.TextP);
+                listBox1.Items.Add("D9000A MSR(510μA):" + Form2.TextP);
+                textBox9.AppendText(Form2.TextP);
             }
-            
-          
-           
+
+
+
 
         }
 
-       /* private void Button10_Click(object sender, EventArgs e)
-        {
+        /* private void Button10_Click(object sender, EventArgs e)
+         {
 
 
-            if (listBox1.Items != null)
-            {
-                for (int n = listBox1.Items.Count - 1; n >= 0; --n)
-                {
-                    string removelistitem = "D9000AI MSR(530μA):";
-                    if (listBox1.Items[n].ToString().Contains(removelistitem))
-                    {
-                        listBox1.Items.RemoveAt(n);
-                    }
-                }
-            }
-            textBox10.Text = "0";
+             if (listBox1.Items != null)
+             {
+                 for (int n = listBox1.Items.Count - 1; n >= 0; --n)
+                 {
+                     string removelistitem = "D9000AI MSR(530μA):";
+                     if (listBox1.Items[n].ToString().Contains(removelistitem))
+                     {
+                         listBox1.Items.RemoveAt(n);
+                     }
+                 }
+             }
+             textBox10.Text = "0";
 
-            f = new Form2();
-            f.ShowDialog();
-            if (Form2.TextP == "0")
-            {
-                textBox10.Text = "0";
-            }
-            else
-            {
-listBox1.Items.Add("D9000AI MSR(530μA):" + Form2.TextP);
-            textBox10.AppendText(Form2.TextP);
-           
-            }
-            
-          
+             f = new Form2();
+             f.ShowDialog();
+             if (Form2.TextP == "0")
+             {
+                 textBox10.Text = "0";
+             }
+             else
+             {
+ listBox1.Items.Add("D9000AI MSR(530μA):" + Form2.TextP);
+             textBox10.AppendText(Form2.TextP);
 
-        }*/
+             }
+
+
+
+         }*/
 
         private void Button11_Click(object sender, EventArgs e)
         {
@@ -415,19 +415,19 @@ listBox1.Items.Add("D9000AI MSR(530μA):" + Form2.TextP);
                     }
                 }
             }
-            
+
             if (Form2.TextP == "0")
             {
                 textBox11.Text = "0";
             }
             else
             {
- listBox1.Items.Add("D9000A MCP(450μA):" + Form2.TextP);
-            textBox11.AppendText(Form2.TextP);
+                listBox1.Items.Add("D9000A MCP(450μA):" + Form2.TextP);
+                textBox11.AppendText(Form2.TextP);
             }
-           
-            
-            
+
+
+
 
 
         }
@@ -448,19 +448,19 @@ listBox1.Items.Add("D9000AI MSR(530μA):" + Form2.TextP);
                     }
                 }
             }
-           
+
             if (Form2.TextP == "0")
             {
                 textBox12.Text = "0";
             }
             else
             {
- listBox1.Items.Add("M9000A ACZ(30mA):" + Form2.TextP);
-            textBox12.AppendText(Form2.TextP);
+                listBox1.Items.Add("M9000A ACZ(30mA):" + Form2.TextP);
+                textBox12.AppendText(Form2.TextP);
             }
-           
-           
-            
+
+
+
 
 
         }
@@ -481,19 +481,19 @@ listBox1.Items.Add("D9000AI MSR(530μA):" + Form2.TextP);
                     }
                 }
             }
-            
+
             if (Form2.TextP == "0")
             {
                 textBox13.Text = "0";
             }
             else
             {
-listBox1.Items.Add("M9000A IN/OUT(500μA):" + Form2.TextP);
-            textBox13.AppendText(Form2.TextP);
+                listBox1.Items.Add("M9000A IN/OUT(500μA):" + Form2.TextP);
+                textBox13.AppendText(Form2.TextP);
             }
-            
-           
-           
+
+
+
 
         }
 
@@ -513,19 +513,19 @@ listBox1.Items.Add("M9000A IN/OUT(500μA):" + Form2.TextP);
                     }
                 }
             }
-            
+
             if (Form2.TextP == "0")
             {
                 textBox14.Text = "0";
             }
             else
             {
-listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
-            textBox14.AppendText(Form2.TextP);
+                listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
+                textBox14.AppendText(Form2.TextP);
             }
-            
-            
-           
+
+
+
         }
 
 
@@ -617,7 +617,7 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
                 double R1 = R - ((num2 + num4 + num6 + num8 + num9 + num10 + num11 + num12) * 0.2);
                 double lenght = (R1 * 0.5);
                 lenght /= 0.0268;
-                   
+
                 if (Math.Abs(lenght) > 4000) lenght = 4000;
                 else
                     Math.Floor(Math.Abs(lenght));
@@ -688,7 +688,7 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
 
         private void Button17_Click(object sender, EventArgs e)
         {
-            
+
             if (textBox16.Text == "")
             {
                 MessageBox.Show("Input lenght(0-2000m)!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -759,7 +759,7 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
 
         private void PrintToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+
 
             m = new Main();
             m.ShowDialog();
@@ -877,16 +877,16 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
 
         private void printToolStripButton_Click(object sender, EventArgs e)
         {
-           
-            
-            if (listBox1.Items.Count==0)
-                
+
+
+            if (listBox1.Items.Count == 0)
+
             {
                 MessageBox.Show("Empty List!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                
+
                 foreach (var item in listBox1.Items)
                 {
 
@@ -900,7 +900,7 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
                 m = new Main();
                 m.ShowDialog();
             }
-            
+
         }
         private void newToolStripButton_Click(object sender, EventArgs e)
         {
@@ -959,14 +959,14 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
             get { return l1; }
             set { l1 = value; }
         }
-        
+
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             button2.Text = "Devices:";
             //button1.Text = "Calculate";
-          
-           label1.Text = "Number of devices";
+
+            label1.Text = "Number of devices";
             label2.Text = "Current mA";
             button16.Text = "Calculate Length";
             button17.Text = "Calculate cross section";
@@ -977,7 +977,7 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
             printToolStripButton.Text = "Print";
             toolStripDropDownButton1.Text = "Language";
             toolStripButton2.Text = "About";
-            
+
             Open1 = "Open";
             Print1 = "Print";
             Remove1 = "Remove";
@@ -999,8 +999,8 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
             printToolStripButton.Text = "Принтирай";
             toolStripDropDownButton1.Text = "Език";
             toolStripButton2.Text = "Относно";
-            
-            L1 ="Брой";
+
+            L1 = "Брой";
             Open1 = "Отвори файл";
             Print1 = "Принтирай";
             Remove1 = "Премахни";
@@ -1063,7 +1063,7 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
         {
             if (F_save == true)
             {
-                
+
             }
             else
             {
@@ -1108,17 +1108,17 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
                     }
                 }
             }
-            
+
         }
 
-            private void toolStripButton2_Click(object sender, EventArgs e)
-            {
-                System.Diagnostics.Process.Start("http://dm-teh.com/about-us/");
-            }
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://dm-teh.com/about-us/");
+        }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBo1_TextChanged(object sender, EventArgs e)
@@ -1142,7 +1142,7 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
-            
+
 
         }
 
@@ -1157,9 +1157,13 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
                 else if (value < 0)
                     textBox16.Text = "0";
             }
-
-
         }
+
+    
+
+
+
+        
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -1249,6 +1253,7 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
             if (sum > 250)
             {
                 MessageBox.Show("Devices must be less than 250!");
+                listBox1.Items.RemoveAt(listBox1.Items.Count - 1);
             }
             else
             {
@@ -1627,6 +1632,17 @@ listBox1.Items.Add("S9000A(10mA):" + Form2.TextP);
 
                 textBox2.Text = tok.ToString() + "mA";
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+            
+        }
+
+        private void textBox17_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -86,6 +86,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -117,6 +118,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(122, 27);
             this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -149,10 +151,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(6, -1);
+            this.button2.Location = new System.Drawing.Point(-1, -1);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(269, 30);
+            this.button2.Size = new System.Drawing.Size(280, 30);
             this.button2.TabIndex = 0;
             this.button2.Text = "Устройство:";
             this.button2.UseVisualStyleBackColor = true;
@@ -160,7 +162,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(6, 38);
+            this.button3.Location = new System.Drawing.Point(-1, 40);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 26);
@@ -171,7 +173,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(155, 38);
+            this.button5.Location = new System.Drawing.Point(159, 41);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(120, 26);
@@ -182,7 +184,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(6, 92);
+            this.button7.Location = new System.Drawing.Point(-1, 92);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(120, 26);
@@ -193,7 +195,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(155, 93);
+            this.button9.Location = new System.Drawing.Point(159, 92);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(120, 26);
@@ -204,7 +206,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(6, 149);
+            this.button11.Location = new System.Drawing.Point(-1, 149);
             this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(120, 26);
@@ -216,6 +218,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.textBox14);
             this.panel1.Controls.Add(this.textBox13);
             this.panel1.Controls.Add(this.textBox12);
@@ -240,7 +243,7 @@
             this.panel1.Location = new System.Drawing.Point(18, 131);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(277, 30);
+            this.panel1.Size = new System.Drawing.Size(280, 30);
             this.panel1.TabIndex = 8;
             // 
             // textBox14
@@ -361,7 +364,7 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(6, 208);
+            this.button14.Location = new System.Drawing.Point(-1, 208);
             this.button14.Margin = new System.Windows.Forms.Padding(2);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(120, 26);
@@ -372,7 +375,7 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(155, 208);
+            this.button13.Location = new System.Drawing.Point(159, 208);
             this.button13.Margin = new System.Windows.Forms.Padding(2);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(120, 26);
@@ -383,7 +386,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(155, 148);
+            this.button12.Location = new System.Drawing.Point(159, 149);
             this.button12.Margin = new System.Windows.Forms.Padding(2);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(120, 26);
@@ -498,7 +501,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.button16);
             this.panel2.Controls.Add(this.radioButton1);
@@ -528,7 +531,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.textBox17);
             this.panel3.Controls.Add(this.button17);
@@ -559,6 +562,7 @@
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(128, 27);
             this.textBox17.TabIndex = 3;
+            this.textBox17.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
             // 
             // button17
             // 
@@ -614,10 +618,11 @@
             this.toolStripSeparator1,
             this.toolStripButton2,
             this.toolStripLabel1,
+            this.toolStripLabel2,
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(814, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(814, 31);
             this.toolStrip1.TabIndex = 28;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -626,7 +631,7 @@
             this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
             this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripButton.Name = "newToolStripButton";
-            this.newToolStripButton.Size = new System.Drawing.Size(100, 24);
+            this.newToolStripButton.Size = new System.Drawing.Size(100, 28);
             this.newToolStripButton.Text = "&Нов файл";
             this.newToolStripButton.Click += new System.EventHandler(this.newToolStripButton_Click);
             // 
@@ -635,7 +640,7 @@
             this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
             this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(82, 24);
+            this.saveToolStripButton.Size = new System.Drawing.Size(82, 28);
             this.saveToolStripButton.Text = "&Запази";
             this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
@@ -644,14 +649,14 @@
             this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
             this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(112, 24);
+            this.printToolStripButton.Size = new System.Drawing.Size(112, 28);
             this.printToolStripButton.Text = "&Принтирай";
             this.printToolStripButton.Click += new System.EventHandler(this.printToolStripButton_Click);
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripDropDownButton1
             // 
@@ -661,7 +666,7 @@
             this.toolStripDropDownButton1.Image = global::DM_Tech.Properties.Resources.download;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(74, 24);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(74, 28);
             this.toolStripDropDownButton1.Text = "Език";
             // 
             // englishToolStripMenuItem
@@ -681,14 +686,14 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripButton2
             // 
             this.toolStripButton2.Image = global::DM_Tech.Properties.Resources.about_button_png;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(93, 24);
+            this.toolStripButton2.Size = new System.Drawing.Size(93, 28);
             this.toolStripButton2.Text = "Относно";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -696,8 +701,16 @@
             // 
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(111, 24);
+            this.toolStripLabel1.Size = new System.Drawing.Size(111, 28);
             this.toolStripLabel1.Text = "toolStripLabel1";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(35, 28);
+            this.toolStripLabel2.Tag = "";
+            this.toolStripLabel2.Text = "v5.4";
+            this.toolStripLabel2.ToolTipText = "Software Version";
             // 
             // toolStripButton1
             // 
@@ -705,7 +718,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 28);
             this.toolStripButton1.Text = "Update";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -717,10 +730,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(18, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 32);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(319, 94);
+            this.pictureBox1.Size = new System.Drawing.Size(342, 95);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -752,7 +765,7 @@
             this.MaximizeBox = false;
             this.Name = "Calculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "DM-Tech Calculator v5.3";
+            this.Text = "DM-Tech Calculator v5.4";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Calculator_FormClosing);
             this.Load += new System.EventHandler(this.Calculator_Load);
             this.panel1.ResumeLayout(false);
@@ -830,6 +843,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
     }
 }
 

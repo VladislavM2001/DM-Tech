@@ -131,7 +131,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
-            this.Text = "DM-Tech Calculator v5.3";
+            this.Text = "DM-Tech Calculator v5.4";
             this.Load += new System.EventHandler(this.Main_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29006.145
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DM-Tech", "DM-Tech.csproj", "{EF1DF3B7-4B00-43CE-97F7-1A8B369EA591}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DM-Tech Calculator Installer", "..\DM-Tech Calculator Installer\DM-Tech Calculator Installer.vdproj", "{5C1AF9E6-7828-4825-A5E6-88D02E8210D1}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DM-Tech Calculator", "..\DM-Tech Calculator Installer\DM-Tech Calculator Installer.vdproj", "{5C1AF9E6-7828-4825-A5E6-88D02E8210D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +18,7 @@ Global
 		{EF1DF3B7-4B00-43CE-97F7-1A8B369EA591}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF1DF3B7-4B00-43CE-97F7-1A8B369EA591}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5C1AF9E6-7828-4825-A5E6-88D02E8210D1}.Debug|Any CPU.ActiveCfg = Debug
+		{5C1AF9E6-7828-4825-A5E6-88D02E8210D1}.Debug|Any CPU.Build.0 = Debug
 		{5C1AF9E6-7828-4825-A5E6-88D02E8210D1}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
