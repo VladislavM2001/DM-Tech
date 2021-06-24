@@ -622,7 +622,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(814, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(814, 27);
             this.toolStrip1.TabIndex = 28;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -631,7 +631,7 @@
             this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
             this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripButton.Name = "newToolStripButton";
-            this.newToolStripButton.Size = new System.Drawing.Size(100, 28);
+            this.newToolStripButton.Size = new System.Drawing.Size(100, 24);
             this.newToolStripButton.Text = "&Нов файл";
             this.newToolStripButton.Click += new System.EventHandler(this.newToolStripButton_Click);
             // 
@@ -640,7 +640,7 @@
             this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
             this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(82, 28);
+            this.saveToolStripButton.Size = new System.Drawing.Size(82, 24);
             this.saveToolStripButton.Text = "&Запази";
             this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
@@ -649,14 +649,14 @@
             this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
             this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(112, 28);
+            this.printToolStripButton.Size = new System.Drawing.Size(112, 24);
             this.printToolStripButton.Text = "&Принтирай";
             this.printToolStripButton.Click += new System.EventHandler(this.printToolStripButton_Click);
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripDropDownButton1
             // 
@@ -666,7 +666,7 @@
             this.toolStripDropDownButton1.Image = global::DM_Tech.Properties.Resources.download;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(74, 28);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(74, 24);
             this.toolStripDropDownButton1.Text = "Език";
             // 
             // englishToolStripMenuItem
@@ -686,14 +686,14 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripButton2
             // 
             this.toolStripButton2.Image = global::DM_Tech.Properties.Resources.about_button_png;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(93, 28);
+            this.toolStripButton2.Size = new System.Drawing.Size(93, 24);
             this.toolStripButton2.Text = "Относно";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -701,13 +701,13 @@
             // 
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(111, 28);
+            this.toolStripLabel1.Size = new System.Drawing.Size(111, 24);
             this.toolStripLabel1.Text = "toolStripLabel1";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(35, 28);
+            this.toolStripLabel2.Size = new System.Drawing.Size(35, 24);
             this.toolStripLabel2.Tag = "";
             this.toolStripLabel2.Text = "v5.4";
             this.toolStripLabel2.ToolTipText = "Software Version";
@@ -718,7 +718,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
             this.toolStripButton1.Text = "Update";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 

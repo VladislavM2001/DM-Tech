@@ -1,26 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
-using System.Runtime.CompilerServices;
+using System.Windows.Forms;
+using CG.Web.MegaApiClient;
+using System.Xml;
+using System.Net.NetworkInformation;
+using System.Net;
+using System.Net.Sockets;
+using System.Diagnostics;
+using System.IO.Compression;
 
 namespace DM_Tech
 {
+
     public partial class Calculator : Form
     {
         bool F_save = false;
         Form2 f;
-        Form3 update;
         Main m;
         double tok;
 
-
+        MegaApiClient client = new MegaApiClient();
+        public static bool HasConnection()
+        {
+            bool net;
+            try
+            {
+                System.Net.IPHostEntry i = System.Net.Dns.GetHostEntry("www.google.com");
+               net=true;
+            }
+            catch
+            {
+                net=false;
+            }
+            return net;
+        }
         private static string open1;
         public static string Open1
         {
@@ -43,8 +56,10 @@ namespace DM_Tech
 
         public Calculator()
         {
+            
             InitializeComponent();
             toolStripButton1.Enabled = false;
+           
             toolTip1.SetToolTip(button3, "Devices number between 0-250!");
 
             toolTip1.SetToolTip(button5, "Devices number between 0-250!");
@@ -92,10 +107,10 @@ namespace DM_Tech
             radioButton5.Enabled = false;
             radioButton6.Enabled = false;
 
-
+            
         }
 
-
+        
 
 
         private static string sech;
@@ -133,7 +148,10 @@ namespace DM_Tech
         {
             listBox1.Items.Add(text);
         }
+        void Updater()
+        {
 
+        }
         private void Button2_Click(object sender, EventArgs e)
         {
 
@@ -831,6 +849,17 @@ listBox1.Items.Add("D9000AI SR(520μA):" + Form2.TextP);
             Open1 = "Отвори файл";
             Print1 = "Принтирай";
             Remove1 = "Премахни";
+            /*bool value=HasConnection();
+            if (value==true)
+           {
+               toolStripButton1.Enabled = true;
+               toolStripButton1.ToolTipText = "Update available!";
+           }
+           else if(value==false)
+           {
+                toolStripButton1.Enabled = false;
+           }*/
+
         }
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
@@ -1061,6 +1090,7 @@ listBox1.Items.Add("D9000AI SR(520μA):" + Form2.TextP);
 
         private void Calculator_FormClosing(object sender, FormClosingEventArgs e)
         {
+          
             if (F_save == true)
             {
 
@@ -1159,11 +1189,11 @@ listBox1.Items.Add("D9000AI SR(520μA):" + Form2.TextP);
             }
         }
 
-    
 
 
 
-        
+
+
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -1205,11 +1235,7 @@ listBox1.Items.Add("D9000AI SR(520μA):" + Form2.TextP);
 
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            update = new Form3();
-            update.Show();
-        }
+
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
@@ -1614,7 +1640,7 @@ listBox1.Items.Add("D9000AI SR(520μA):" + Form2.TextP);
             if (sum > 250)
             {
                 MessageBox.Show("Devices must be less than 250!");
-               
+
             }
             else
             {
@@ -1636,14 +1662,86 @@ listBox1.Items.Add("D9000AI SR(520μA):" + Form2.TextP);
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           
-            
+
+
         }
 
         private void textBox17_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /* private void toolStripButton1_Click(object sender, EventArgs e)
+         {
+
+             var client = new MegaApiClient();
+             client.LoginAnonymous();
+             //   there:
+             Uri fileLink = new Uri(@"https://mega.nz/file/j0hlVCCR#rwZWSH-sj96Sb-Dz8tMgXZa9Dxp7X0osL-fw07UlB2s");
+             INodeInfo node = client.GetNodeFromLink(fileLink);
+
+
+
+
+             var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+             string fileName = desktop + "\\DM_Tech Calc v5.4.rar";
+             if (File.Exists(fileName) == true)
+             {
+                 MessageBox.Show("Update is already download!");
+                 DialogResult dial = MessageBox.Show("Do you want to replaced if?", "ASK", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                 if (dial == DialogResult.Yes)
+                 {
+                     File.Delete(fileName);
+                     client.DownloadFile(fileLink, fileName);
+                     MessageBox.Show("Download Complete!");
+
+
+                     //Process installer = Process.Start(@"");
+
+                 }
+                 else
+                 {
+                     client.Logout();
+                     this.Close();
+                 }
+             }
+             else
+             {
+                MessageBox.Show($"Downloading {node.Name} at: Desktop");
+                 client.DownloadFile(fileLink, fileName);
+
+                 MessageBox.Show("Download Complete!");
+                 client.Logout();
+             }
+        /* here:
+             Console.WriteLine("Do u want to delete the file? Y//N");
+             string ans = Console.ReadLine();
+             if (ans == "Y")
+             {
+                 File.Delete(fileName);
+                 Console.WriteLine("File is deleted!");
+                 goto there;
+
+             }
+             else if (ans == "N")
+             {
+                 Console.WriteLine("GoodBye!");
+                 client.Logout();
+             }
+             else
+             {
+                 Console.WriteLine("Wrong Input!");
+                 goto here;
+             }
+
+
+         }*/
     }
 }
 

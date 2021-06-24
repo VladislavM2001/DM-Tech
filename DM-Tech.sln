@@ -7,19 +7,37 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DM-Tech", "DM-Tech.csproj",
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DM-Tech Calculator", "..\DM-Tech Calculator Installer\DM-Tech Calculator Installer.vdproj", "{5C1AF9E6-7828-4825-A5E6-88D02E8210D1}"
 EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "SetupProject1", "..\SetupProject1\SetupProject1.wixproj", "{24342822-0406-4FA4-BD58-6E04BCD3EB19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{EF1DF3B7-4B00-43CE-97F7-1A8B369EA591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EF1DF3B7-4B00-43CE-97F7-1A8B369EA591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF1DF3B7-4B00-43CE-97F7-1A8B369EA591}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EF1DF3B7-4B00-43CE-97F7-1A8B369EA591}.Debug|x86.Build.0 = Debug|Any CPU
 		{EF1DF3B7-4B00-43CE-97F7-1A8B369EA591}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF1DF3B7-4B00-43CE-97F7-1A8B369EA591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF1DF3B7-4B00-43CE-97F7-1A8B369EA591}.Release|x86.ActiveCfg = Release|Any CPU
+		{EF1DF3B7-4B00-43CE-97F7-1A8B369EA591}.Release|x86.Build.0 = Release|Any CPU
 		{5C1AF9E6-7828-4825-A5E6-88D02E8210D1}.Debug|Any CPU.ActiveCfg = Debug
 		{5C1AF9E6-7828-4825-A5E6-88D02E8210D1}.Debug|Any CPU.Build.0 = Debug
+		{5C1AF9E6-7828-4825-A5E6-88D02E8210D1}.Debug|x86.ActiveCfg = Debug
+		{5C1AF9E6-7828-4825-A5E6-88D02E8210D1}.Debug|x86.Build.0 = Debug
 		{5C1AF9E6-7828-4825-A5E6-88D02E8210D1}.Release|Any CPU.ActiveCfg = Release
+		{5C1AF9E6-7828-4825-A5E6-88D02E8210D1}.Release|x86.ActiveCfg = Release
+		{5C1AF9E6-7828-4825-A5E6-88D02E8210D1}.Release|x86.Build.0 = Release
+		{24342822-0406-4FA4-BD58-6E04BCD3EB19}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{24342822-0406-4FA4-BD58-6E04BCD3EB19}.Debug|x86.ActiveCfg = Debug|x86
+		{24342822-0406-4FA4-BD58-6E04BCD3EB19}.Debug|x86.Build.0 = Debug|x86
+		{24342822-0406-4FA4-BD58-6E04BCD3EB19}.Release|Any CPU.ActiveCfg = Release|x86
+		{24342822-0406-4FA4-BD58-6E04BCD3EB19}.Release|x86.ActiveCfg = Release|x86
+		{24342822-0406-4FA4-BD58-6E04BCD3EB19}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
